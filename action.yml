@@ -1,0 +1,15 @@
+name: "Asana Prefix Link Action"
+description: "Pick up an Asana defined prefix from the PR title and link it in a project"
+inputs:
+  GITHUB_TOKEN:
+    description: "Github Token"
+    required: true
+  ASANA_API_KEY:
+    description: "Asana API Key"
+    required: true
+  ASANA_PROJECT:
+    description: "Asana Project"
+    required: true
+runs:
+  using: "node16"
+  main: "index.js"
