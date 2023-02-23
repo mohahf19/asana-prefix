@@ -14,5 +14,6 @@ jobs:
         id: hello
         with:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-          ASANA_API_KEY: "ASANA_KEY"
-          ASANA_PROJECT: "ASANA PROJECT"
+          ASANA_CLIENT_ID: ${{secrets.ASANA_CLIENT_ID}}
+          ASANA_CLIENT_SECRET: ${{secrets.ASANA_CLIENT_SECRET}}
+          ASANA_PROJECT_GID: "1204009259533718"

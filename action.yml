@@ -4,11 +4,14 @@ inputs:
   GITHUB_TOKEN:
     description: "Github Token"
     required: true
-  ASANA_API_KEY:
-    description: "Asana API Key"
+  ASANA_CLIENT_ID:
+    description: "Asana Client ID"
     required: true
-  ASANA_PROJECT:
-    description: "Asana Project"
+  ASANA_CLIENT_SECRET:
+    description: "Asana Client Secret"
+    required: true
+  ASANA_PROJECT_GID:
+    description: "Asana Project GID"
     required: true
 runs:
   using: "node16"
