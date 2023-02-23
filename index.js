@@ -9,8 +9,13 @@ try {
     const asanaProject = core.getInput("ASANA_PROJECT");
 
     const payload = JSON.stringify(github.context.payload, undefined, 2);
-    console.log(`The event payload: ${payload}`);
-    console.log(`Asana Project: ${asanaProject}`);
+
+    // get the PR name
+    const prName = github.context.payload.pull_request.title;
+    // check if prName begins with a square bracket that contains the ticket number
+    const ticketNumber = prName.match(/\[(.*?)\]/)[1];
+
+    console.log(`Ticket Number: ${ticketNumber}`);
 } catch (error) {
     core.setFailed(error.message);
 }
