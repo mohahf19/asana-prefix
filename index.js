@@ -22,7 +22,7 @@ async function run() {
 
         //initialize asana client
         const client = asana.Client.create().useAccessToken(asanaPAT);
-        const result = client.tasks.getTasksForProject(asanaProjectGid, {
+        const result = await client.tasks.getTasksForProject(asanaProjectGid, {
             opt_pretty: true,
         });
         // find the task that starts with the ticketNumer (there is at most one)
