@@ -12,7 +12,8 @@ try {
 
     // get the PR name
     const prName = github.context.payload.pull_request.title;
-
+    const { context = {} } = github;
+    const { pull_request } = context.payload;
     // get the ticket number, which is in the format "[TICKET-NUMBER] more text"
     // find first occurance of a square bracket
     const ticketNumber = prName.substring(0, prName.indexOf("]") + 1);
@@ -33,6 +34,14 @@ try {
                 const taskGid = task.gid;
                 const taskLink = asanaHomeLink + asanaProjectGid + "/" + taskGid;
                 console.log("Task link: " + taskLink);
+
+                // add comment to the PR wit the task link and task name
+                const octokit = github.getOctokit(githubToken);
+                octokit.rest.issues.createComment({
+                    ...context.repo,
+                    issue_number: pull_request.number,
+                    body: "Asana Task: [" + task.name + "](" + taskLink + ")",
+                });
             } else {
                 throw new Error("No task found for ticket number: " + ticketNumber);
             }

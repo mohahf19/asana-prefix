@@ -14,5 +14,5 @@ jobs:
         id: hello
         with:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-          ASANA_TOKEN: ${{secrets.ASANA_TOKEN}
+          ASANA_TOKEN: ${{secrets.ASANA_TOKEN}}
           ASANA_PROJECT_GID: "1204035711888252"
