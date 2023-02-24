@@ -23,3 +23,4 @@ First, generate an Asana PAT. This can be done as in [here](https://developers.a
 ### `ASANA_PROJECT_GID`
 
 **Required** Asana Project GID to search for tickets in.
+
