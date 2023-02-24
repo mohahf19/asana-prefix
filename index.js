@@ -37,12 +37,11 @@ async function run() {
 
             // add comment to the PR wit the task link and task name
             const octokit = github.getOctokit(githubToken);
-            await octokit.rest.pulls.createComment({
+            await octokit.rest.issues.createComment({
                 ...context.repo,
                 issue_number: pull_request.number,
-                body: "Asana Task: [" + task.name + "](" + taskLink + ")",
+                body: `Task: [${task.name}](${taskLink})`,
             });
-            ockto;
         } else {
             throw new Error("No task found for ticket number: " + ticketNumber);
         }
