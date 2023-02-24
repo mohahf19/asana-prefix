@@ -42,5 +42,5 @@ jobs:
         with:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           ASANA_TOKEN: ${{secrets.ASANA_TOKEN}}
-          ASANA_PROJECT_GID: "1204035711888252"
+          ASANA_PROJECT_GID: "[your-project-gid]"
 ```
