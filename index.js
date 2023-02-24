@@ -40,7 +40,7 @@ async function run() {
             await octokit.rest.issues.createComment({
                 ...context.repo,
                 issue_number: pull_request.number,
-                body: `Task: [${task.name}](${taskLink})`,
+                body: `Asana Task: [${task.name}](${taskLink})`,
             });
         } else {
             throw new Error("No task found for ticket number: " + ticketNumber);
