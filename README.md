@@ -34,7 +34,9 @@ on:
 
 jobs:
   test:
-    permissions: write-all
+    permissions:
+      contents: read
+      pull-requests: write
     runs-on: ubuntu-latest
     steps:
       - name: Asana Prefix Action
