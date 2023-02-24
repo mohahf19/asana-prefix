@@ -37,7 +37,7 @@ async function run() {
 
             // add comment to the PR wit the task link and task name
             const octokit = github.getOctokit(githubToken);
-            await octokit.rest.issues.createComment({
+            await octokit.rest.pulls.createComment({
                 ...context.repo,
                 issue_number: pull_request.number,
                 body: "Asana Task: [" + task.name + "](" + taskLink + ")",
