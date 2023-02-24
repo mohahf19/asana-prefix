@@ -23,3 +23,24 @@ First, generate an Asana PAT. This can be done as in [here](https://developers.a
 ### `ASANA_PROJECT_GID`
 
 **Required** Asana Project GID to search for tickets in.
+
+## Example usage
+
+```
+name: Sample Asana Prefix Fetch
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  test:
+    permissions: write-all
+    runs-on: ubuntu-latest
+    steps:
+      - name: Asana Prefix Action
+        uses: mohahf19/asana-prefix
+        with:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          ASANA_TOKEN: ${{secrets.ASANA_TOKEN}}
+          ASANA_PROJECT_GID: "1204035711888252"
+```
