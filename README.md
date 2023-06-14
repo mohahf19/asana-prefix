@@ -46,3 +46,11 @@ jobs:
           ASANA_TOKEN: ${{secrets.ASANA_TOKEN}}
           ASANA_PROJECT_GID: "[your-project-gid]"
 ```
+
+## Compiling the action
+
+Run
+
+```
+ncc build index.js
+```
